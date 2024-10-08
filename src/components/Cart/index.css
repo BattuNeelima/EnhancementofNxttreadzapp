@@ -31,16 +31,13 @@
 }
 
 .remove-all-btn {
-  display: flex;
-  align-self: flex-end;
-  color: #0b69ff;
-  background: transparent;
-  font-family: 'Roboto';
-  font-size: 18px;
-  font-weight: 500;
-  line-height: 1.5;
   border: none;
   outline: none;
+  background-color: transparent;
+  font-family: 'Roboto';
+  font-weight: 500;
+  font-size: 16px;
+  color: #0b69ff;
   cursor: pointer;
 }
 
@@ -57,3 +54,4 @@
   }
 }
 
+/* Write your CSS here */

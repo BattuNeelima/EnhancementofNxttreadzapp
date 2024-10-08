@@ -49,11 +49,11 @@ const Payment = () => {
     cartList.reduce((acc, item) => acc + item.quantity * item.price, 0)
 
   const renderPaymentMethodsInput = () => (
-    <ul className="paymeny-method-inputs">
+    <ul className="payment-method-inputs">
       {paymentOptionsList.map(eachMethod => (
         <li key={eachMethod.id} className="payment-method-input-container">
           <input
-            className="payment-metod-input"
+            className="payment-method-input"
             id={eachMethod.id}
             type="radio"
             name="paymentMethod"
@@ -84,7 +84,7 @@ const Payment = () => {
           <h1 className="payments-heading">Payments Details</h1>
           <p className="payments-sub-heading">Payment Method</p>
           {renderPaymentMethodsInput()}
-          <div className="oder-details">
+          <div className="order-details">
             <p className="payments-sub-heading">Order details:</p>
             <p>Quantity: {cartList.length}</p>
             <p>Total Price: RS {getTotalPrice()}/-</p>
@@ -92,7 +92,7 @@ const Payment = () => {
           <button
             disabled={paymentMethod === ''}
             type="button"
-            className="confirem-order-button"
+            className="confirm-order-button"
             onClick={onPlaceOrder}
           >
             Confirm Order

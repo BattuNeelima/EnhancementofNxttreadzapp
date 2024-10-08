@@ -22,6 +22,7 @@ class App extends Component {
       const isProductAlreadyExists = prevState.cartList.find(
         ele => ele.id === product.id,
       )
+
       if (isProductAlreadyExists) {
         return {
           cartList: prevState.cartList.map(item =>
@@ -58,9 +59,11 @@ class App extends Component {
 
   decrementCartItemQuantity = productId => {
     this.setState(prevState => ({
-      cartList: prevState.cartList.map(item =>
-        item.id === productId ? {...item, quantity: item.quantity - 1} : item,
-      ),
+      cartList: prevState.cartList
+        .map(item =>
+          item.id === productId ? {...item, quantity: item.quantity - 1} : item,
+        )
+        .filter(item => item.quantity >= 1),
     }))
   }
 
@@ -73,7 +76,7 @@ class App extends Component {
           cartList,
           addCartItem: this.addCartItem,
           removeCartItem: this.removeCartItem,
-          removeAllCartItem: this.removeAllCartItems,
+          removeAllCartItems: this.removeAllCartItems,
           incrementCartItemQuantity: this.incrementCartItemQuantity,
           decrementCartItemQuantity: this.decrementCartItemQuantity,
         }}
@@ -81,7 +84,7 @@ class App extends Component {
         <Switch>
           <Route exact path="/login" component={LoginForm} />
           <ProtectedRoute exact path="/" component={Home} />
-          <ProtectedRoute exact path="/products" componet={Products} />
+          <ProtectedRoute exact path="/products" component={Products} />
           <ProtectedRoute
             exact
             path="/products/:id"

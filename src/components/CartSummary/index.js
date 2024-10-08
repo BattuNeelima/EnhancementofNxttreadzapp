@@ -1,3 +1,5 @@
+// Write your code here
+
 import Popup from 'reactjs-popup'
 
 import Payment from '../Payment'
@@ -18,8 +20,8 @@ const CartSummary = () => (
       return (
         <div className="cart-summary-container">
           <div className="cart-summary-card">
-            <h1 className="order-items-total-price">
-              Order Total: <span>Rs {totalPrice}/-</span>
+            <h1 className="cart-items-total-price">
+              Order Total: <span>RS {totalPrice}/-</span>
             </h1>
             <p className="cart-items-count">{items} Items in cart</p>
 
